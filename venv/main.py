@@ -217,5 +217,5 @@ async def on_message(message):
 
 #running the function with the bot's token 
 keep_alive()
-TOKEN = "MTAyNTI0NDgwNDAyMTQ5Nzg2Ng.Gd9Mc4.RTUKPfN48gU1SW5-NYaFyx2-q0AiIjjlI9CchU"
+TOKEN = "insert token here"
 client.run(TOKEN)
