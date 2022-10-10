@@ -23,6 +23,7 @@ multiple commands avaiable to randomly select a winner for giveaways.
       pip install -r requirements.txt
 9. Lastly lets run our bot with the commands below, and you should see your bot online in your server!
       source bin/activate
+      
       python main.py
 10. If you don't know what to do from here, type help! in your server and the bot will reply with command options. 
 
