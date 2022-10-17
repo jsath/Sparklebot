@@ -182,6 +182,7 @@ async def on_message(message):
                 return
             else:
                 for i in range(0, 2):
+                    sleep(delay)
                     longest = len(nums) - 1
                     nums.pop(random.randint(0, longest))
                 await message.channel.send(f'\U0001F4A3Remaining: {nums}\U0001F4B0')
@@ -211,11 +212,38 @@ async def on_message(message):
                     nums.pop(random.randint(0, longest))
                 await message.channel.send(f'Remaining: \U0001F4B0{nums}\U0001F4B0')
                 i+=1
+    
 
+
+    if user_message.split(':')[0].lower() == ("raffles"):
+        print(user_message)
+        delay = user_message.split('-')[0]
+        delay = float(delay.rsplit(':')[-1])
+        winners = user_message.split('!')[0]
+        winners = int(winners.rsplit('-')[-1])
+        if(delay > 30):
+            return
+        list = ["jack", "smith", "testing", "wolfgame", "crypto", "random", "sparklegame"]
+
+        i = 0
+        max = len(list)
+        await message.channel.send(f'Users: {list}')
+        while i < max:
+            if(len(list) == winners):
+                for x in range(0, winners):
+                    longest = len(list) - 1
+                    current = list.pop(random.randint(0, longest))
+                    await message.channel.send(f'{current}\u2728')
+                return
+            else:
+                longest = len(list) - 1
+                current = list.pop(random.randint(0, longest))
+                await message.channel.send(f'{current}\u274C')
+                i+=1
         
 
 
 #running the function with the bot's token 
 keep_alive()
-TOKEN = "MTAyNTI0NDgwNDAyMTQ5Nzg2Ng.Gd9Mc4.RTUKPfN48gU1SW5-NYaFyx2-q0AiIjjlI9CchU"
+TOKEN = "insert token here"
 client.run(TOKEN)
