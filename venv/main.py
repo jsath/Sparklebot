@@ -39,7 +39,7 @@ async def on_message(message):
 
 
     if user_message.split('!')[0].lower() == ("help"):
-        await message.channel.send(f'Commands: \n raffle:(delay)-(max)! standard elimination style raffle \n rafflem:1/(role - all users my default)! raffle for members with role \n raffleo:(delay)!  all online users raffle \n rafflex:(delay)-(max)!  faster raffle\n raffle5:(delay)-(max)!  picks 5 winners')
+        await message.channel.send(f'Commands: \n raffle:(delay)-(max)! standard elimination style raffle \n rafflem:1/(role - all users my default)! raffle for members with role \n raffleo:(delay)!  all online users raffle \n rafflex:(delay)-(max)!  faster raffle\n raffle5:(delay)-(max)!  picks 5 winners \n raffles:(delay)-(amount of winners) picks a certain amount of winners from a list')
 
 
     if user_message.split(':')[0].lower() == ("raffle"):
@@ -169,6 +169,11 @@ async def on_message(message):
         nums = []
         for x in range(1,max+1):
             nums.append(x)
+        
+
+        added = [5321,325,58]
+        nums.extend(added)
+        print(nums)
         i = 0
         while i < max:
             longest = len(nums) - 1
@@ -245,5 +250,5 @@ async def on_message(message):
 
 #running the function with the bot's token 
 keep_alive()
-TOKEN = "insert token here"
+TOKEN = "token"
 client.run(TOKEN)
