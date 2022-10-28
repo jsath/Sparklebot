@@ -1,5 +1,4 @@
 
-
 #importing all necessary packages 
 from distutils.command.clean import clean
 import discord
@@ -7,6 +6,8 @@ from time import sleep
 import random
 from random import randint
 from server import keep_alive
+from datetime import datetime
+import time
 
 
 
@@ -245,10 +246,51 @@ async def on_message(message):
                 current = list.pop(random.randint(0, longest))
                 await message.channel.send(f'{current}\u274C')
                 i+=1
+    
+
+    if user_message.split(':')[0].lower() == ("raffletest"):
+        set = user_message.split('!')[0]
+        set = int(set.rsplit(':')[-1])
+
+
+        #Add list of users here 
+        list = ["wolf", "sheep", "jack", "smith",]
+
+        i = 0
+        pre = ','.join(list)
+        await message.channel.send(f'Potential winners: {pre}')
+        max = len(list)
+        while i < max:
+
+            now = datetime.now()
+            epochtime = int(time.time())
+            epochtime += set 
+            await message.channel.send(f'<t:{epochtime}:R>')
+
+
+            sleep(set)
+            if(len(list) == 1):
+                for x in range(0, 1):
+                    longest = len(list) - 1
+                    current = list.pop(random.randint(0, longest))
+                    await message.channel.send(f'{current}\u2728')
+                return
+            else:
+                longest = len(list) - 1
+                current = list.pop(random.randint(0, longest))
+                await message.channel.send(f'{current}\u274C')
+                i+=1
+    
+
+
+        
+    
+
+
         
 
 
 #running the function with the bot's token 
 keep_alive()
-TOKEN = "token"
+TOKEN = "insert token here"
 client.run(TOKEN)
