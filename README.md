@@ -35,7 +35,7 @@
 
 ### Built With
 ![Discord.com]
-![Python.com]
+
 
 
 
@@ -63,4 +63,4 @@
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [Discord.com]: https://img.shields.io/badge/-Discord.py-white?logo=discord
-[Python.com]: https://img.shields.io/badge/-Python-yellow?logo=python
+
